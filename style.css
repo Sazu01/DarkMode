@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Bebas Neue", cursive;
+  font-size: 62.5%;
+
+  --PrimaryColor: #ff8367;
+  --black: #000;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --bg: rgb(255, 255, 255);
+  --bg-track: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.container {
+  max-width: 1170px;
+  width: 90%;
+  margin: auto;
+}
+
+.heroSection {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.columnWrapper {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+}
+
+/* col1 */
+.column1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+}
+
+.redColor {
+  color: var(--PrimaryColor);
+}
+
+.column1 h1 {
+  font-size: 8rem;
+  font-weight: 700;
+}
+
+.column1 p {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.column1 a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--white);
+  padding: 15px 30px;
+  background-color: var(--PrimaryColor);
+  display: inline;
+}
+
+/* col2 */
+
+.column2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.column img {
+  width: 100%;
+  max-width: 485px;
+}
+
+/* section 3 */
+
+.column2.column3_2 {
+  order: 1;
+  justify-content: flex-start;
+}
+.column3_1 {
+  padding-left: 160px;
+  order: 2;
+}
+
+.switch {
+  width: 50px;
+  height: 30px;
+  background-color: var(--bg);
+  border-radius: 15px;
+  padding: 5px;
+  box-shadow: 0 0 20px var(--shadow);
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+}
+
+.switch > div {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-color: var(--bg-track);
+}
+
+.switch > div > div {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  background-color: var(--PrimaryColor);
+}
+
+.circleWrapper {
+  position: relative;
+}
+
+.circle {
+  position: absolute;
+  left: 0;
+  transform: translateX(0);
+
+  transition: all 200ms ease;
+}
+
+.circle.on {
+  left: 100%;
+  transform: translateX(-100%);
+}
+
+@media screen and (max-width: 800px) {
+    .column3_1 {
+        padding: 0;
+    }
+
+    .column {
+        width: 100%;
+    }
+
+    .heroSection {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .columnWrapper {
+        flex-direction: column;
+        gap: 80px
+    }
+
+    .switch {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .column3_1 {
+        order: 1;
+    }
+    .column3_2 {
+        order: 2;
+    }
+}
